@@ -32,7 +32,7 @@ public class ThreadLoadImageHandler
 
     internal static void BeginThreadIfNotRunning()
     {
-        if (ThreadRunning) return;
+        /*if (ThreadRunning) return;
         PluginLog.Information("Starting ThreadLoadImageHandler");
         ThreadRunning = true;
         new Thread(() =>
@@ -68,6 +68,6 @@ public class ThreadLoadImageHandler
             });
             PluginLog.Information($"Stopping ThreadLoadImageHandler, ticks={idleTicks}");
             ThreadRunning = false;
-        }).Start();
+        }).Start();*/
     }
 }

@@ -3,6 +3,7 @@ using Dalamud.Interface;
 using Dalamud.Interface.Colors;
 using Dalamud.Interface.Components;
 using Dalamud.Interface.Internal.Notifications;
+using Dalamud.Interface.Utility;
 using Dalamud.Logging;
 using Dalamud.Plugin;
 using ECommons;
@@ -29,7 +30,7 @@ namespace PunishLib.ImGuiMethods
         private static bool apiTestFail = false;
         private static bool disableTestButton = false;
         private static List<string> testedKeys = new();
-        private static DalamudStartInfo startInfo;
+        //private static DalamudStartInfo startInfo;
         private static List<LocalPluginInfo> installedPluginInfo = new();
         private static Regex uuidPattern = new Regex("[a-fA-F\\d]{8}(?:\\-[a-fA-F\\d]{4}){3}\\-[a-fA-F\\d]{12}$");
 
@@ -42,7 +43,7 @@ namespace PunishLib.ImGuiMethods
         {
             ImGuiEx.ImGuiLineCentered("About1", delegate
             {
-                ImGuiEx.Text($"{P.Name} - {PunishLibMain.PluginManifest.AssemblyVersion}");
+                ImGuiEx.Text($"{Svc.PluginInterface.InternalName} - {PunishLibMain.PluginManifest.AssemblyVersion}");
             });
 
             PunishLibMain.About.WithLoveBy();

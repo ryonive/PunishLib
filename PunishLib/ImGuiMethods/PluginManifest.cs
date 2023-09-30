@@ -88,13 +88,6 @@ namespace PunishLib.ImGuiMethods
         public string? RepoUrl { get; init; }
 
         /// <summary>
-        /// Gets the version of the game this plugin works with.
-        /// </summary>
-        [JsonProperty]
-        [JsonConverter(typeof(GameVersionConverter))]
-        public GameVersion? ApplicableVersion { get; init; } = GameVersion.Any;
-
-        /// <summary>
         /// Gets the API level of this plugin. For the current API level, please see <see cref="PluginManager.DalamudApiLevel"/>
         /// for the currently used API level.
         /// </summary>

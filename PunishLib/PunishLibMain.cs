@@ -25,7 +25,7 @@ namespace PunishLib
 
         public static void Init(DalamudPluginInterface pluginInterface, IDalamudPlugin instance, AboutPlugin about = null, params PunishOption[] opts)
         {
-            PluginName = instance.Name;
+            PluginName = pluginInterface.InternalName;
             PluginInterface = pluginInterface;
             PluginManifest = new();
             About = about ?? new();
