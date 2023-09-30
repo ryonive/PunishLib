@@ -7,6 +7,7 @@ using Dalamud.Logging;
 using Dalamud.Plugin;
 using ECommons;
 using ECommons.DalamudServices;
+using ECommons.ImGuiMethods;
 using ECommons.Reflection;
 using ImGuiNET;
 using Newtonsoft.Json;
@@ -153,7 +154,8 @@ namespace PunishLib.ImGuiMethods
 
                     if (ImGui.Button("Diagnostics Export"))
                     {
-                        if (DalamudReflector.TryGetDalamudStartInfo(out startInfo, Svc.PluginInterface))
+                        Notify.Error("Unsupported");
+                        /*if (DalamudReflector.TryGetDalamudStartInfo(out startInfo, Svc.PluginInterface))
                         PunishLibMain.SharedConfig.FFXIVGameVersion = startInfo.GameVersion?.ToString();
 
                         var pluginManager = DalamudReflector.GetPluginManager();
@@ -177,7 +179,7 @@ namespace PunishLib.ImGuiMethods
                         }
                         PunishLibMain.SharedConfig.InstalledPlugins = JsonConvert.SerializeObject(installedPluginInfo);
                         PunishLibMain.SharedConfig.ClientLanguage = Svc.ClientState.ClientLanguage.ToString();
-
+                        */
                     }
 
                     ImGui.SameLine();

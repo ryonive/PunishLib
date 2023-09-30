@@ -32,7 +32,7 @@ namespace PunishLib
             if(Svc.ClientState.LocalPlayer != null)
             {
                 Svc.Framework.Update -= FrameworkUpdate;
-                Svc.Chat.PrintChat(new()
+                Svc.Chat.Print(new()
                 {
                     Message = new SeStringBuilder().AddUiForeground("Hello, you should see this message only once", 41).Build()
                 });
