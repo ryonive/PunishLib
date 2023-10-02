@@ -1,4 +1,5 @@
 ﻿using Dalamud;
+using Dalamud.Common;
 using Dalamud.Interface;
 using Dalamud.Interface.Colors;
 using Dalamud.Interface.Components;
@@ -30,7 +31,7 @@ namespace PunishLib.ImGuiMethods
         private static bool apiTestFail = false;
         private static bool disableTestButton = false;
         private static List<string> testedKeys = new();
-        //private static DalamudStartInfo startInfo;
+        private static DalamudStartInfo startInfo;
         private static List<LocalPluginInfo> installedPluginInfo = new();
         private static Regex uuidPattern = new Regex("[a-fA-F\\d]{8}(?:\\-[a-fA-F\\d]{4}){3}\\-[a-fA-F\\d]{12}$");
 
@@ -155,8 +156,7 @@ namespace PunishLib.ImGuiMethods
 
                     if (ImGui.Button("Diagnostics Export"))
                     {
-                        Notify.Error("Unsupported");
-                        /*if (DalamudReflector.TryGetDalamudStartInfo(out startInfo, Svc.PluginInterface))
+                        if (DalamudReflector.TryGetDalamudStartInfo(out startInfo, Svc.PluginInterface))
                         PunishLibMain.SharedConfig.FFXIVGameVersion = startInfo.GameVersion?.ToString();
 
                         var pluginManager = DalamudReflector.GetPluginManager();
@@ -180,7 +180,6 @@ namespace PunishLib.ImGuiMethods
                         }
                         PunishLibMain.SharedConfig.InstalledPlugins = JsonConvert.SerializeObject(installedPluginInfo);
                         PunishLibMain.SharedConfig.ClientLanguage = Svc.ClientState.ClientLanguage.ToString();
-                        */
                     }
 
                     ImGui.SameLine();
